@@ -85,7 +85,7 @@ class PageDataProvider extends AbstractDataProvider {
     public function __set($key, $value) {
 
         // set the actual value, skip reserved fuel settings like page, input [...]
-        if(!in_array($key, $this->systemFuelItems)) $this->wire($key, $value);
+        if(!in_array($key, $this->systemFuelItems, true)) $this->wire($key, $value);
         
     }
 
